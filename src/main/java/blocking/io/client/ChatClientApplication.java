@@ -27,7 +27,8 @@ public class ChatClientApplication {
         try {
             chatClientThread.join();
         } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+            LOGGER.severe("The main thread has been unexpectedly interrupted");
+            System.exit(1);
         }
     }
 }
